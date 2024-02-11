@@ -7,38 +7,44 @@
   <title>test</title>
   <link href="../src/style.scss" rel="stylesheet/scss" type="text/css" />
 </head>
-<header>
-  <h1>Тест для itprofit</h1>
-</header>
-<main>
-  <div class="wrapper">
-    <form action="#" class="form">
-      <label>Имя<input type="text" class="input" />
-        <div class="error-text">
-          &nbsp;
-        </div>
-      </label>
-      <label>Почта<input type="email" class="input">
-        <div class="error-text">
-          &nbsp;
-        </div>
-      </label>
-      <label>Телефон<input type="text" class="input">
-        <div class="error-text">
-          &nbsp;
-        </div>
-      </label>
-      <label>Сообщение<textarea type="text" class="textarea"></textarea>
-        <div class="error-text">
-          &nbsp;
-        </div>
-      </label>
-    </form>
-  </div>
-</main>
 
 <body>
-  <script src="../src/index.js"></script>
+  <header>
+    <h1>Тест для itprofit</h1>
+  </header>
+  <main>
+    <div class="modal">
+      <div class="modal__content">
+        <h2 class="modal__title"></h2>
+        <div class="modal__text"></div><button class="modal__btn">X</button>
+      </div>
+    </div>
+    <div class="wrapper">
+      <form action="#" class="form">
+        <label>Имя<input type="text" class="input name" name="name" />
+          <div class="name__error-text error-text">
+            &nbsp;
+          </div>
+        </label>
+        <label>Почта<input type="email" class="input email" name="name" />
+          <div class="email__error-text error-text">
+            &nbsp;
+          </div>
+        </label> Телефон<input type="text" class="input phone" name="name" />
+        <div class="phone__error-text error-text">
+          &nbsp;
+        </div>
+        </label>
+        <label>Сообщение<textarea type="text" class="input textarea"></textarea>
+          <div class="textarea__error-text error-text">
+            &nbsp;
+          </div>
+        </label>
+        <button class="btn" disabled>Отправить</button>
+      </form>
+    </div>
+  </main>
+  <footer class="footer"><button class="footer__btn btn">Открыть модальное окно</button></footer>
 </body>
 
 </html>

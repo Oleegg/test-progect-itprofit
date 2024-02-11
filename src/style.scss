@@ -36,10 +36,6 @@ label {
   gap: 5px;
 }
 
-.textarea {
-  max-width: 100%;
-}
-
 .input {
   border-radius: 5px;
   font-size: 20px;
@@ -47,18 +43,13 @@ label {
   width: 100%;
 }
 
-.input__error {
+.err {
   border: 2px solid red;
 }
 
-.text__error {
-  font-size: 20px;
-  height: 25px;
-  color: red;
-}
-
 .btn {
-  padding: 10px;
+  padding: 10px 30px;
+
   cursor: pointer;
   &:disabled {
     cursor: not-allowed;
@@ -67,5 +58,51 @@ label {
 
 .error-text {
   font-size: 20px;
+  height: 25px;
   color: red;
+  height: 25px;
+}
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  &__title {
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    height: 70vh;
+    width: 70vw;
+    background-color: aliceblue;
+  }
+  &__btn {
+    padding: 10px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  &__text {
+    font-size: 1rem;
+  }
+  &__red {
+    color: red;
+  }
+  &__green {
+    color: green;
+  }
+}
+
+.visible {
+  display: flex;
 }
