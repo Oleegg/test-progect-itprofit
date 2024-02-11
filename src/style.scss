@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  scrollbar-gutter: stable;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 700px;
+  width: 100%;
+  border: 6px double red;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.textarea {
+  max-width: 100%;
+}
+
+.input {
+  border-radius: 5px;
+  font-size: 20px;
+  max-width: 90%;
+  width: 100%;
+}
+
+.input__error {
+  border: 2px solid red;
+}
+
+.text__error {
+  font-size: 20px;
+  height: 25px;
+  color: red;
+}
+
+.btn {
+  padding: 10px;
+  cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.error-text {
+  font-size: 20px;
+  color: red;
+}
