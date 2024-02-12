@@ -4,10 +4,11 @@ import {
   isNameError,
   isPhoneError,
   isTextError,
-  isGlobalError,
+  button,
 } from "./components/validation";
 import { logIn } from "./components/ajax";
 
+const body = document.querySelector("body");
 const form = document.querySelector(".form");
 const nameInput = document.querySelector(".name");
 const emailInput = document.querySelector(".email");
@@ -26,6 +27,7 @@ textarea.addEventListener("blur", isTextError);
 
 modalBtn.addEventListener("click", () => {
   modal.classList.remove("visible");
+  body.classList.remove("scroll");
   modalTitle.classList.remove("modal__red");
   modalTitle.classList.remove("modal__green");
 });
@@ -35,11 +37,12 @@ footerBtn.addEventListener("click", () => {
     status: "text",
     message: "Какое-то сообщение в модальном окне",
   };
-  modalContent(content);
+  showModal(content);
 });
 
-const modalContent = (data) => {
+const showModal = (data) => {
   modal.classList.add("visible");
+  body.classList.add("scroll");
   if (data.status == "error") {
     modalTitle.innerText = "error";
     modalTitle.classList.add("modal__red");
@@ -54,6 +57,14 @@ const modalContent = (data) => {
   }
 };
 
+const resetForm = () => {
+  nameInput.value = "";
+  emailInput.value = "";
+  phoneInput.value = "";
+  textarea.value = "";
+  button.disabled = true;
+};
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   if (!isGlobalError) {
@@ -64,7 +75,10 @@ form.addEventListener("submit", async (e) => {
       text: textarea.value,
     };
     const data = await logIn(req);
-    modalContent(data);
+    showModal(data);
+    if (data.status == "success") {
+      resetForm();
+    }
   } else {
     console.log(e);
   }

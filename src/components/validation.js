@@ -2,7 +2,7 @@ const nameError = document.querySelector(".name__error-text");
 const emailError = document.querySelector(".email__error-text");
 const phoneError = document.querySelector(".phone__error-text");
 const textareaError = document.querySelector(".textarea__error-text");
-const button = document.querySelector(".btn");
+export const button = document.querySelector(".btn");
 
 export let isGlobalError = true;
 let isNameValid = false;
@@ -51,10 +51,10 @@ const valid = new Validation();
 export const errorHandler = () => {
   if (isNameValid && isEmailValid && isPhoneValid && isTextValid) {
     isGlobalError = false;
-    button.disabled = false;
+    button.disabled = isGlobalError;
   } else {
     isGlobalError = true;
-    button.disabled = true;
+    button.disabled = isGlobalError;
   }
 };
 

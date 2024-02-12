@@ -4,8 +4,12 @@
   box-sizing: border-box;
 }
 
-body {
+html {
   scrollbar-gutter: stable;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 header {
@@ -72,11 +76,13 @@ label {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.3);
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
-  &__title {
-  }
+  transform: scale(0) rotate(360deg);
+  opacity: 0;
+  transition: all 1s;
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -104,5 +110,10 @@ label {
 }
 
 .visible {
-  display: flex;
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+
+.scroll {
+  overflow: hidden;
 }
