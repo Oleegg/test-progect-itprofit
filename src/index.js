@@ -4,6 +4,7 @@ import {
   isNameError,
   isPhoneError,
   isTextError,
+  isGlobalError,
   button,
 } from "./components/validation";
 import { logIn } from "./components/ajax";
